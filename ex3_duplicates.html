@@ -17,19 +17,15 @@
                     var newArray = [];
                     for (i=0;i<anArray.length;i++){
                         var current = anArray[i];
-                        // console.log("current: ",current);
                         var restOfArray = [];
                         restOfArray.push.apply(restOfArray, anArray.slice(0,i));
                         restOfArray.push.apply(restOfArray, anArray.slice(i+1));
-                        // restOfArray = anArray.slice(0,i) + anArray.slice((i+1));
-                        // console.log("rest of array:",restOfArray);
                         for (j=0;j<restOfArray.length;j++){
                             if (anArray[i]===restOfArray[j]){
                                 // need to only push into newArray if not already there.
                                 if (! (newArray.indexOf(anArray[i]) >=0)  ){
                                     newArray.push(anArray[i]);
                                 }
-                                // newArray.push(anArray[i]);
                             }
                         }
                     }
@@ -47,7 +43,6 @@
                 output3 = searchDuplicates(["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 + 3", 19, "19", 19 === "19", 6, false, false]);
                 console.log(output3);
                 // // [19, false]
-
 
             </script>
     </body>
