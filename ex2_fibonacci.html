@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Learning!</title>
+    </head>
+    
+    <body>
+        <h1>Fibonacci -- Running the script</h1>
+
+            <script>
+                function fibonacci(max){
+                    if (max > 1){
+                        var fibList = [1];
+                        var current = 1;
+                        while (current < max){
+                            fibList.push(current);
+                            current = fibList[fibList.length-1] + fibList[fibList.length-2];
+                        }
+                        return fibList;
+                    }
+                    else{
+                        return [1,1];
+                    }
+                }
+
+                function filter(aFunction,aList){
+                    var returnList =[];
+                    for (var i=0; i<aList.length; i++){
+                        var num = aList[i];
+                        if (aFunction(num)){
+                            returnList.push(num);
+                        }
+                    }
+                    return returnList;
+                }
+
+                var isEven = function(aNumber){
+                    return (aNumber % 2 === 0);
+                }
+
+                function sum(aList){
+                    var fibTotal = 0;
+                    for (var i=0; i<aList.length; i++){
+                        fibTotal = fibTotal + aList[i];
+                    }
+                    return fibTotal
+                }
+
+                var output = sum(filter(isEven,fibonacci(4000000)));
+                console.log(output);
+
+            </script>
+    </body>
+</html>
