@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Learning!</title>
+    </head>
+    
+    <body>
+        <h1>Javascript Learning -- Running the script</h1>
+
+            <script>
+                function returnsTrue(aFunction,aList){
+                    var returnList =[];
+                    for (var i=0; i<aList.length; i++){
+                        var num = aList[i];
+                        if (aFunction(num)){
+                            returnList.push(num);
+                        }
+                    }
+                    return returnList;
+                }
+
+                var isEven = function(aNumber){
+                    return (aNumber % 2 === 0);
+                }
+
+                //Testign the isEven function works
+                // var testOut = isEven(5);
+                // console.log(testOut);
+                //testing the main returnsTrue function works
+                testList = [4, 8, 15, 16, 23, 42];
+                var test2Out = returnsTrue(isEven, testList);
+                console.log(test2Out);
+
+            </script>
+    </body>
+</html>
