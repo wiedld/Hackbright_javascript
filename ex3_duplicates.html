@@ -25,7 +25,11 @@
                         // console.log("rest of array:",restOfArray);
                         for (j=0;j<restOfArray.length;j++){
                             if (anArray[i]===restOfArray[j]){
-                                newArray.push(anArray[i]);
+                                // need to only push into newArray if not already there.
+                                if (! (newArray.indexOf(anArray[i]) >=0)  ){
+                                    newArray.push(anArray[i]);
+                                }
+                                // newArray.push(anArray[i]);
                             }
                         }
                     }
