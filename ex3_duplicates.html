@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Learning!</title>
+    </head>
+    
+    <body>
+        <h1>Finding Duplicates -- Running the script</h1>
+
+            <script>
+                //take an array
+                //for array[i], 
+                    //if there are duplicates anywhere in the array
+                        // if true, then insert into newArray.  
+                            //but only if not already in newArray
+                function searchDuplicates(anArray){
+                    var newArray = [];
+                    for (i=0;i<anArray.length;i++){
+                        var current = anArray[i];
+                        // console.log("current: ",current);
+                        var restOfArray = [];
+                        restOfArray.push.apply(restOfArray, anArray.slice(0,i));
+                        restOfArray.push.apply(restOfArray, anArray.slice(i+1));
+                        // restOfArray = anArray.slice(0,i) + anArray.slice((i+1));
+                        // console.log("rest of array:",restOfArray);
+                        for (j=0;j<restOfArray.length;j++){
+                            if (anArray[i]===restOfArray[j]){
+                                newArray.push(anArray[i]);
+                            }
+                        }
+                    }
+                    return newArray
+                }
+
+                output = searchDuplicates(["katie", "amy", "jenny", "katie", "kelley", "katie", "amy"]);
+                console.log(output);
+                // ["katie", "amy"]
+
+                output2 = searchDuplicates(["47","12", "19", "22", "26", "99", "30", "50", "324", "003", "44","33", "346", "354", "44", "235", "45", "34", "44", "590", "09", "099", "0", "1", "3", "33", "999", "9"]);
+                console.log(output2);
+                // // ["44", "33"]
+
+                output3 = searchDuplicates(["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 + 3", 19, "19", 19 === "19", 6, false, false]);
+                console.log(output3);
+                // // [19, false]
+
+
+            </script>
+    </body>
+</html>
