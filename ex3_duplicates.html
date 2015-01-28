@@ -18,13 +18,14 @@
                     for (i=0;i<anArray.length;i++){
                         var current = anArray[i];
                         var restOfArray = [];
+                        // making a new list to compare with var current
                         restOfArray.push.apply(restOfArray, anArray.slice(0,i));
                         restOfArray.push.apply(restOfArray, anArray.slice(i+1));
                         for (j=0;j<restOfArray.length;j++){
-                            if (anArray[i]===restOfArray[j]){
-                                // need to only push into newArray if not already there.
-                                if (! (newArray.indexOf(anArray[i]) >=0)  ){
-                                    newArray.push(anArray[i]);
+                            if (current===restOfArray[j]){
+                                // how to do a python "something in something" in javascript
+                                if (! (newArray.indexOf(current) >=0)  ){
+                                    newArray.push(current);
                                 }
                             }
                         }
