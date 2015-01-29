@@ -1,0 +1,60 @@
+!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Learning!</title>
+    </head>
+    
+    <body>
+        <h1>Command Line Pal -- Running the script</h1>
+
+            <script>
+            // make a var cat that is a dictionary 
+                // with keys equalling adjectives (with int for level)
+                // and keys which are associated with functions:
+                    // that console.log a descriptor of the action, and
+                    // changes the adjectives (values for the key)
+
+                var cat = {
+                    tiredness: 20,
+                    hunger: 20,
+                    loneliness: 3,
+                    happiness: 15,
+                    obedience: -5000,
+                    feed: function () {
+                        console.log("Om nom nom");
+                        this.hunger = this.hunger - 5;
+                        },
+                    sleep: function () {
+                        console.log("Zzzzzzz");
+                        this.tiredness = 0;
+                        },
+                    pet: function () {
+                        console.log("Purrrr");
+                        this.loneliness = this.loneliness - 0.5;
+                        this.happiness = this.happiness + 20;
+                        },
+                    bribe: function (){
+                        console.log("hisssssss....I refuse to obey, hairless ape!");
+                        this.obedience = this.obedience;
+                        this.happiness = this.happiness - 50;
+                        }
+                    }; 
+
+            // method that calls the current dictionary function
+                // which will print action onto screen
+                // and returns cat's status
+
+            // test:
+            cat.feed()
+            cat.pet()
+            cat.bribe()
+            cat.pet()
+            // cat.feed().pet().bribe().pet()
+            console.log(cat.hunger);            // 15
+            console.log(cat.obedience);         // -5000
+            console.log(cat.happiness);         // 5
+            console.log(cat.loneliness);        // 2
+
+            </script>
+    </body>
+</html>
