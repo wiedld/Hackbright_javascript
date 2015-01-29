@@ -37,24 +37,22 @@
                         console.log("hisssssss....I refuse to obey, hairless ape!");
                         this.obedience = this.obedience;
                         this.happiness = this.happiness - 50;
+                        },
+                    currentCat: function(){
+                        console.log("Tiredness:",cat.tiredness); 
+                        console.log("Hunger:",cat.hunger);            
+                        console.log("Loneliness:",cat.loneliness);
+                        console.log("Happiness:",cat.happiness); 
+                        console.log("Obedience:",cat.obedience);                                  
                         }
                     }; 
-
-            // method that calls the current dictionary function
-                // which will print action onto screen
-                // and returns cat's status
 
             // test:
             cat.feed()
             cat.pet()
             cat.bribe()
             cat.pet()
-            // cat.feed().pet().bribe().pet()
-            console.log(cat.hunger);            // 15
-            console.log(cat.obedience);         // -5000
-            console.log(cat.happiness);         // 5
-            console.log(cat.loneliness);        // 2
-
+            cat.currentCat()
             </script>
     </body>
 </html>
