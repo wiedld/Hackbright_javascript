@@ -23,8 +23,8 @@
                         restOfArray.push.apply(restOfArray, anArray.slice(i+1));
                         for (j=0;j<restOfArray.length;j++){
                             if (current===restOfArray[j]){
-                                // how to do a python "something in something" in javascript
-                                if (! (newArray.indexOf(current) >=0)  ){
+                                // how to do a python "something not in something" in javascript.  Index of "not there" is == -1.
+                                if (newArray.indexOf(current) === -1){
                                     newArray.push(current);
                                 }
                             }
